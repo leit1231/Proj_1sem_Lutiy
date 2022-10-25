@@ -6,4 +6,4 @@ while True: #обработка исключений
         break
     except ValueError:
         print("Что-то пошло не так")
-print("hello world")
+
