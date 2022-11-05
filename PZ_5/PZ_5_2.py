@@ -13,4 +13,3 @@ while True: #Обработак исключений
         break
     except:
         print("Ошибка!")
-
