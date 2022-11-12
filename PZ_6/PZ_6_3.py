@@ -13,10 +13,11 @@ while True:     #обработка исключений
                     lst.insert(0, lst.pop())
         N = randint(0, 10)
         A = [randint(1, 10) for i in range(N)]
-        print("Наш список:",A)
-
+        print("Наш список:")
+        print(A)
         shift(A, 1)
-        print("Список со сдвигом вправо:",A)
+        print("Список со сдвигом вправо:")
+        print(A)
         break
     except:
         print('Ошибка!')
