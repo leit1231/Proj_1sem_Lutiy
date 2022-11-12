@@ -11,16 +11,11 @@ while True:     #обработка исключений
             else:
                 for i in range(steps):
                     lst.insert(0, lst.pop())
-
-
         N = randint(0, 10)
         A = [randint(1, 10) for i in range(N)]
         print(A)
 
-        shift(A, -1)
-        print(A)
-
-        shift(A, 3)
+        shift(A, 1)
         print(A)
         break
     except:
