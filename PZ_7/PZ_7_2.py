@@ -8,7 +8,7 @@ while True:     #обработка исключений
         for i in a: #проверка строки на наличие гласных букв
             if i in string:
                 n+=1
-        print(n)
+        print('Kоличество гласных букв: ',n)
         break
     except:
         print("Ошибка!")
