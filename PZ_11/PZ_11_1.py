@@ -25,18 +25,11 @@ for i in range(len(k)):
 file_3.close()
 
 mi=min(k)
-print(mi)
 minimum = (k.index(mi))
 
-data = []
-f = open('data_1.txt', 'r+')
-s = (f.read())
-a = s.split(',')
-print(a)
-f.close()
-# prois = [x*mi for x in list]
-
+prois = " ".join(list)
+prois = " ".join([str(int(x)*mi) for x in prois.split()])
 f4 = open('data_2.txt', 'a') # открываем файл для дозаписи
 f4.write('\n')
-print('Количество элементов:', len(k),'\n' 'Индекс первого минимального элемента:', minimum, '\n' 'Умножаем все элементы на минимальный элемент:', a,file=f4)
+print('Количество элементов:', len(k),'\n' 'Индекс первого минимального элемента:', minimum, '\n' 'Умножаем все элементы на минимальный элемент:', prois,file=f4)
 f4.close()
