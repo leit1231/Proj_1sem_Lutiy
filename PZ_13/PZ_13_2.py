@@ -13,4 +13,4 @@ for i in range(len(A)):         # len(A) - возвращает количест
 
 minmatr = min([x[-2] for x in A])
 
-print('Минимальный элемент:', minmatr)
+print('Минимальный элемент предпоследнего столбца:', minmatr)
