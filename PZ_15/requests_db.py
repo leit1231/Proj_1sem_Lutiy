@@ -55,41 +55,26 @@ def req_upd():
         # cur.execute("UPDATE store_applications SET application_date='2023-09-06' WHERE id_market=9")
         #6
         # cur.execute("UPDATE number_stock SET quantity = 123 WHERE id<5")
-        #7
-        # cur.execute("UPDATE games SET score = score+1000 WHERE user_id < 3 and score < 2000")
-        #8
-        # cur.execute("UPDATE games SET score = score+1000 WHERE user_id < 3 and score < 2000")
-        #9
-        # cur.execute("UPDATE games SET score = score+1000 WHERE user_id < 3 and score < 2000")
-        #10
-        # cur.execute("UPDATE games SET score = score+1000 WHERE user_id < 3 and score < 2000")
-        #11
-        # cur.execute("UPDATE games SET score = score+1000 WHERE user_id < 3 and score < 2000")
-        #12
-        # cur.execute("UPDATE games SET score = score+1000 WHERE user_id < 3 and score < 2000")\
-        #13
-        # cur.execute("UPDATE games SET score = score+1000 WHERE user_id < 3 and score < 2000")
-
 def req_del():
     with sq.connect('opt_base.db') as con:
         cur = con.cursor()
         #1
-        cur.execute("DELETE FROM store_applications WHERE id = 6")
+        # cur.execute("DELETE FROM store_applications WHERE id = 6")
         # 2
-        # cur.execute("DELETE FROM games WHERE user_id = 5 or score < 2500")
+        # cur.execute("DELETE FROM number_stock WHERE id_tovar NOT IN (SELECT id_tovar FROM compound)")
         # 3
-        # cur.execute("DELETE FROM games WHERE user_id = 5 or score < 2500")
+        # cur.execute("DELETE FROM store_applications WHERE id_market in (SELECT id FROM market WHERE adress LIKE 'ул.Ленина%')")
         # 4
-        # cur.execute("DELETE FROM games WHERE user_id = 5 or score < 2500")
+        # cur.execute("DELETE FROM compound WHERE id_tovar IN (SELECT id_tovar FROM number_stock WHERE quantity = 0)")
         # 5
-        # cur.execute("DELETE FROM games WHERE user_id = 5 or score < 2500")
+        # cur.execute("DELETE FROM market WHERE id in (SELECT id_market FROM store_applications WHERE application_date > '2023-09-30')")
         # 6
-        # cur.execute("DELETE FROM games WHERE user_id = 5 or score < 2500")
+        # cur.execute("DELETE FROM compound WHERE id in (SELECT id FROM number_stock WHERE quantity = 0)")
         # 7
-        # cur.execute("DELETE FROM games WHERE user_id = 5 or score < 2500")
+        # cur.execute("DELETE FROM number_stock WHERE quantity = 0")
         # 8
-        # cur.execute("DELETE FROM games WHERE user_id = 5 or score < 2500")
+        # cur.execute("DELETE FROM compound WHERE id_appl in (SELECT id FROM store_applications WHERE application_date > '2023-09-30')")
 
-# req_sel()
+
 # req_upd()
-req_del()
+# req_del()
