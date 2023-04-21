@@ -6,39 +6,39 @@ def req_sel():
         #1
         cur.execute("SELECT title, description FROM tovar")
         result = cur.fetchall()
-        print(result)
+        print('1 -', result)
         #2
         cur.execute("SELECT title, adress FROM market")
         result = cur.fetchall()
-        print(result)
+        print('2 -', result)
         #3
         cur.execute("SELECT id, application_date FROM store_applications")
         result = cur.fetchall()
-        print(result)
+        print('3 -', result)
         #4
         cur.execute("SELECT tovar.title, number_stock.quantity FROM tovar INNER JOIN number_stock ON tovar.id = number_stock.id_tovar")
         result = cur.fetchall()
-        print(result)
+        print('4 -', result)
         #5
         cur.execute("SELECT tovar.title, number_stock.quantity FROM tovar INNER JOIN number_stock ON tovar.id = number_stock.id_tovar ORDER BY quantity DESC")
         result = cur.fetchall()
-        print(result)
+        print('5 -', result)
         #6
         cur.execute("SELECT compound.id_appl, tovar.title FROM tovar INNER JOIN compound ON tovar.id = compound.id_tovar ORDER BY id_appl")
         result = cur.fetchall()
-        print(result)
+        print('6 -', result)
         #7
         cur.execute("SELECT tovar.title, number_stock.quantity FROM tovar INNER JOIN number_stock ON tovar.id = number_stock.id_tovar WHERE quantity < 70")
         result = cur.fetchall()
-        print(result)
+        print('7 -', result)
         #8
         cur.execute("SELECT store_applications.id, market.title, store_applications.application_date FROM market INNER JOIN store_applications ON market.id = store_applications.id_market WHERE application_date = '2023-09-30' ")
         result = cur.fetchall()
-        print(result)
+        print('8 -', result)
         #9
         cur.execute("SELECT compound.quantity, market.title FROM market INNER JOIN store_applications ON market.id = store_applications.id_market INNER JOIN compound ON store_applications.id = compound.id_appl WHERE quantity<70")
         result = cur.fetchall()
-        print(result)
+        print('9 -', result)
 
 def req_upd():
     with sq.connect('opt_base.db') as con:
@@ -75,6 +75,6 @@ def req_del():
         # 8
         # cur.execute("DELETE FROM compound WHERE id_appl in (SELECT id FROM store_applications WHERE application_date > '2023-09-30')")
 
-
+req_sel()
 # req_upd()
 # req_del()
