@@ -1,3 +1,6 @@
+# Создайте базовый класс "Форма" со свойствами "цвет" и "тип". От этого класса
+# унаследуйте класс "Круг" и добавьте в него свойство "радиус". Определите методы
+# вычисления площади и периметра
 import math
 class Form:
   def __init__(self, color: str, type_form: str):
@@ -24,6 +27,5 @@ class Circle(Form):
 
 
 cr = Circle('red', 'circle', 5)
-# print(cr.__dict__)
 print(cr.pl_cr())
 print(cr.pr_cr())
